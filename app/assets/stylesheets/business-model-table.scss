@@ -1,0 +1,71 @@
+@import "compass";
+
+.business-model-wrapper, html, body, .container {
+  height: 100%;
+}
+
+.business-model-box {
+  padding: 5px;
+  margin: 4px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  overflow: auto;
+  h3 {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14pt;
+  }
+  .btn {
+    margin: 1px;
+  }
+}
+
+.business-model-column {
+  padding: 4px;
+  height: 66%;
+  width: 20%;
+  float: left;
+  position: relative;
+}
+.business-model-footer {
+  padding: 4px;
+  height: 33%;
+  width: 50%;
+  float: left;
+  height: 33%;
+  position: relative;
+}
+
+.business-model-box {
+  float: left;
+  height: 50%;
+  height: calc(50% - 4px);
+  width: 100%;
+
+  &.key_partners {
+    height: 100%;
+  }
+  &.key_activities {
+
+  }
+  &.key_resources {
+  }
+  &.offer {
+    height: 100%;
+  }
+  &.customer_relationship {
+  }
+  &.channels {
+  }
+  &.target_market {
+    height: 100%;
+  }
+  &.cost_structure {
+    height: 100%;
+  }
+  &.revenue_structure {
+    height: 100%;
+  }
+}

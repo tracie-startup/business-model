@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to hypotheses_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_hypothesis_path(@hypothesis), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show hypothesis</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Short name:</dt>
+  <dd><%= @hypothesis.short_name %></dd>
+
+  <dt>State:</dt>
+  <dd><%= @hypothesis.state %></dd>
+
+  <dt>Business model part:</dt>
+  <dd><%= @hypothesis.business_model_part %></dd>
+
+  <dt>Hypotheses:</dt>
+  <dd><%= @hypothesis.hypotheses %></dd>
+
+  <dt>Experiment:</dt>
+  <dd><%= @hypothesis.experiment %></dd>
+
+  <dt>Pass fail criterion:</dt>
+  <dd><%= @hypothesis.pass_fail_criterion %></dd>
+
+  <dt>Created by:</dt>
+  <dd><%= @hypothesis.created_by %></dd>
+
+</dl>

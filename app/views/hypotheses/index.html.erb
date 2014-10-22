@@ -1,0 +1,35 @@
+<div class="business-model-wrapper">
+
+  <div class="business-model-column">
+    <%=business_plan_part :key_partners%>
+  </div>
+  <div class="business-model-column">
+    <%=business_plan_part :key_activities%>
+    <%=business_plan_part :key_resources%>
+  </div>
+  <div class="business-model-column">
+    <%=business_plan_part :offer%>
+  </div>
+  <div class="business-model-column">
+    <%=business_plan_part :customer_relationship%>
+    <%=business_plan_part :channels%>
+  </div>
+  <div class="business-model-column">
+    <%=business_plan_part :target_market%>
+  </div>
+  <div class="business-model-footer">
+    <%=business_plan_part :cost_structure%>
+  </div>
+  <div class="business-model-footer">
+    <%=business_plan_part :revenue_structure%>
+  </div>
+
+  <!-- <% Hypothesis::MODEL_PARTS.each do |key, value|%>
+    <div class="business-model-box <%=key%>">
+      <h3><%= key.to_s.humanize %></h3>
+      <% @grouped_hypotheses[value].each do |hypothesis| %>
+        <%=link_to hypothesis.short_name, hypothesis, :class=>"btn btn-#{hypothesis.bootstraped_state}" %>
+      <% end if @grouped_hypotheses[value] %>
+    </div>
+  <% end %> -->
+</div>
