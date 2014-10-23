@@ -1,6 +1,6 @@
 class HypothesesController < ApplicationController
   before_action :set_hypothesis, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:edit, :create, :new]
+  before_filter :authenticate_user!, only: [:edit, :create, :new, :destroy]
 
   # GET /hypotheses
   # GET /hypotheses.json

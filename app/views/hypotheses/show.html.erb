@@ -1,4 +1,8 @@
 <div class="page-header">
+  <%= link_to hypothesis_path(@hypothesis), :method => :delete, data: {confirm: "Are you shure to delete '#{@hypothesis.short_name}'?"}, :class => 'btn btn-danger' do %>
+    <span class="glyphicon glyphicon-remove"></span>
+    Delete
+  <% end %>
   <%= link_to hypotheses_path, :class => 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
