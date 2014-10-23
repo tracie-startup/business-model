@@ -48,5 +48,3 @@ gem 'compass-rails'
 gem 'rails_12factor', group: :production
 
 gem 'pg', group: :production
-
-gem 'ruby-2.1.2'
