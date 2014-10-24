@@ -49,7 +49,7 @@ class HypothesesController < ApplicationController
   def update
     respond_to do |format|
       if @hypothesis.update(hypothesis_params)
-        format.html { redirect_to @hypothesis, notice: 'Hypothesis was successfully updated.' }
+        format.html { redirect_to hypotheses_path, notice: 'Hypothesis was successfully updated.' }
         format.json { render :show, status: :ok, location: @hypothesis }
       else
         format.html { render :edit }
