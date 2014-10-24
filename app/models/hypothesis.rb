@@ -10,7 +10,7 @@ class Hypothesis < ActiveRecord::Base
     :key_partners => 0,
     :key_activities => 1,
     :key_resources => 2,
-    :offer => 3,
+    :value_propositions => 3,
     :customer_relationship => 4,
     :channels => 5,
     :target_market => 6,
