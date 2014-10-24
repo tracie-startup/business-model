@@ -3,7 +3,7 @@ module HypothesesHelper
     value = Hypothesis::MODEL_PARTS[part]
     cards = ""
     @grouped_hypotheses[value].each do |hypothesis|
-      cards += link_to hypothesis.short_name, hypothesis, :class=>"btn btn-#{hypothesis.bootstraped_state}"
+      cards += link_to hypothesis.short_name, hypothesis, :class=>"btn btn-xs btn-#{hypothesis.bootstraped_state}"
     end if @grouped_hypotheses[value]
 
     "<div class=\"business-model-box #{part}\">
