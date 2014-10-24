@@ -1,6 +1,7 @@
 class Hypothesis < ActiveRecord::Base
 
   STATE = {
+    :draft => 3,
     :accepted => 2,
     :hypothetical => 1,
     :declined => 0
@@ -28,14 +29,26 @@ class Hypothesis < ActiveRecord::Base
 		define_method("#{meth}!") { self.role = code }
 	end
 
+  def filtered_state
+    if experiment.to_s == '' or
+        pass_fail_criterion.to_s == '' or
+        hypotheses.to_s == ''
+      return STATE[:draft]
+    else
+      return state
+    end
+  end
+
   def bootstraped_state
-    case state
+    case filtered_state
     when STATE[:accepted]
       return "success"
     when STATE[:hypothetical]
       return "warning"
     when STATE[:declined]
       return "danger"
+    when STATE[:draft]
+        return "default"
     else
       return "default"
     end
