@@ -18,6 +18,9 @@ class HypothesesController < ApplicationController
   def new
     @hypothesis = Hypothesis.new
     @hypothesis.state = Hypothesis::STATE[:hypothetical]
+    if params[:model_part]
+      @hypothesis.business_model_part = Hypothesis::MODEL_PARTS[params[:model_part].to_sym] #Hypothesis::MODEL_PARTS[params[:model_part]]
+    end
   end
 
   # GET /hypotheses/1/edit
@@ -32,7 +35,7 @@ class HypothesesController < ApplicationController
 
     respond_to do |format|
       if @hypothesis.save
-        format.html { redirect_to @hypothesis, notice: 'Hypothesis was successfully created.' }
+        format.html { redirect_to hypotheses_path, notice: 'Hypothesis was successfully created.' }
         format.json { render :show, status: :created, location: @hypothesis }
       else
         format.html { render :new }
@@ -73,6 +76,6 @@ class HypothesesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hypothesis_params
-      params.require(:hypothesis).permit(:short_name, :state, :business_model_part, :hypotheses, :experiment, :pass_fail_criterion)
+      params.require(:hypothesis).permit(:short_name, :state, :business_model_part, :hypotheses, :experiment, :pass_fail_criterion, :model_part)
     end
 end

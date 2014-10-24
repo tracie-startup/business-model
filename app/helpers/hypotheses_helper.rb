@@ -7,6 +7,7 @@ module HypothesesHelper
     end if @grouped_hypotheses[value]
 
     "<div class=\"business-model-box #{part}\">
+      <a href='#{new_hypothesis_path :model_part => part}' class='btn btn-default btn-xs add-hypothesis-button'><span class='glyphicon glyphicon-plus'></span></a>
       <h3>#{part.to_s.humanize}</h3>
       #{cards}
     </div>".html_safe
