@@ -1,5 +1,7 @@
 class Hypothesis < ActiveRecord::Base
 
+  belongs_to :author, class_name: "User", foreign_key: :created_by
+
   STATE = {
     :draft => 3,
     :accepted => 2,
