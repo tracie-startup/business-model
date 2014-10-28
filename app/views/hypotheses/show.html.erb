@@ -25,13 +25,13 @@
   <dd><%= @hypothesis.business_model_part %></dd>
 
   <dt>Hypotheses:</dt>
-  <dd><%= @hypothesis.hypotheses %></dd>
+  <dd><%=@markdown.render(@hypothesis.hypotheses).html_safe %></dd>
 
   <dt>Experiment:</dt>
-  <dd><%= @hypothesis.experiment %></dd>
+  <dd><%=@markdown.render(@hypothesis.experiment).html_safe %></dd>
 
   <dt>Pass fail criterion:</dt>
-  <dd><%= @hypothesis.pass_fail_criterion %></dd>
+  <dd><%=@markdown.render(@hypothesis.pass_fail_criterion).html_safe %></dd>
 
   <dt>Created by:</dt>
   <dd><%= @hypothesis.author.name.to_s %></dd>

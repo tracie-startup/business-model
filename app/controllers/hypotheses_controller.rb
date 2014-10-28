@@ -12,6 +12,7 @@ class HypothesesController < ApplicationController
   # GET /hypotheses/1
   # GET /hypotheses/1.json
   def show
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
   end
 
   # GET /hypotheses/new
