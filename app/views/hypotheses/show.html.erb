@@ -33,7 +33,25 @@
   <dt>Pass fail criterion:</dt>
   <dd><%=@markdown.render(@hypothesis.pass_fail_criterion).html_safe %></dd>
 
+  <hr>
+
   <dt>Created by:</dt>
   <dd><%= @hypothesis.author.name.to_s %></dd>
+
+  <dt>Versions:</dt>
+  <dd>
+    <ol>
+      <% @hypothesis.versions.each do |version| %>
+        <li>
+          <%= version.created_at.to_formatted_s(:short) %>
+          <% user_who_made_the_change = User.find version.whodunnit.to_i %>
+          <%= user_who_made_the_change.name %>
+          <%= "<i>(Created)</i>".html_safe if version.event == "create" %>
+          <%=link_to "Show", hypothesis_path(@hypothesis, version: version.next.created_at) if version.next %>
+          <%=link_to "Live", hypothesis_path(@hypothesis) unless version.next %>
+      </li>
+      <% end %>
+    </ol>
+  </dd>
 
 </dl>

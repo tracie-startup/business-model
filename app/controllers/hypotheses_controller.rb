@@ -13,6 +13,10 @@ class HypothesesController < ApplicationController
   # GET /hypotheses/1.json
   def show
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+    @version = params[:version]
+    unless @version.blank?
+      @hypothesis = @hypothesis.version_at(@version)
+    end
   end
 
   # GET /hypotheses/new

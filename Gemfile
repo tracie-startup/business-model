@@ -54,3 +54,6 @@ gem 'postmark-rails'
 gem "letter_opener", :group => :development
 
 gem 'redcarpet'
+
+
+gem 'paper_trail'
