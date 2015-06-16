@@ -51,5 +51,6 @@ gem 'pg', group: :production
 
 #Send mails on heroku
 gem 'postmark-rails'
+gem "letter_opener", :group => :development
 
 gem 'redcarpet'
